@@ -13,3 +13,55 @@ body {
 
 
 }
+
+     /* o topo do texto  */
+
+.topo-texto {
+     background-color: #007bff;
+     color:white;
+     text-align: left;
+     padding: 10px;     /*espacamento interno */
+     font-size: 1em;
+}
+
+
+header {
+    background-color: #DFC57B;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+}
+  
+nav ul {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+}
+
+nav ul a {
+   color:white;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007bff
+}
+
+main {
+padding: 20px;
+
+}
+
+/* rodape */
+
+footer {
+    background-color: #007bff;
+    color:white;
+    text-align: center;
+    padding: 10px;
+
+
+}
