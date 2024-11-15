@@ -15,7 +15,11 @@
 
             <!-- cabeçalho -->
          <header>
+            <div class="logo-container">
+                
+            <img src="img/Aether.jpg" alt="Logo do site" class="logo">
              <h1>Aether Games</h1>
+            </div>
              <nav>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
