@@ -8,16 +8,13 @@
         <Link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-        <div class="topo-texto">
-          <p>Bem-vindo ao Aether Games! confira as últimas novidades do mundo dos games.</p>
-
-        </div>
+    
 
             <!-- cabeçalho -->
          <header>
             <div class="logo-container">
                 
-            <img src="img/Aether.jpg" alt="Logo do site" class="logo">
+            <img src="img/Aether.png" alt="Logo do site" class="logo">
              <h1>Aether Games</h1>
             </div>
              <nav>

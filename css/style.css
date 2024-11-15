@@ -20,7 +20,7 @@ body {
     gap: 10px;
 }
 .logo {
-     width: 40px;
+     width: 90px;
      height: auto;
 
 }
@@ -38,7 +38,7 @@ body {
 
 
 header {
-    background-color: #DFC57B;
+    background-color: #171a4a;
     color: white;
     display: flex;
     justify-content: space-between;
