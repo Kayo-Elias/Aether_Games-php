@@ -13,8 +13,32 @@
 
         </div>
 
+            <!-- cabeçalho -->
+         <header>
+             <h1>Aether Games</h1>
+             <nav>
+                <ul>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="noticias.php">Noticias</a></li>
+                </ul>
+             </nav>
+         </header>
+         
+                  <!-- principal -->
+
+                  <main>
+                    <h2>Últimas notícias</h2>
+                    <p>Bem-vindo a nossa página inicial. Aqui você encontrará as notícias sobre os últimos lancaçamento do mundo dos games.</p>
+
+                </main>
+
+                 <!-- rodapé -->
+                  <footer>
+                    <p>&copy; 2024 Aether Games</p>
+                  </footer>
+
+
+
 
 </body>
-
-
 </html>
