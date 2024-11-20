@@ -6,6 +6,41 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aether Games</title>
         <Link rel="stylesheet" href="css/style.css">
+        <style>
+          
+          .noticia img {
+              width: 150px; 
+              height: auto; 
+              object-fit: cover; 
+              margin-right: 10px; 
+          }
+
+          .noticia {
+              display: flex;
+              align-items: center; 
+              margin-bottom: 20px; 
+          }
+
+          .noticia h3 {
+              margin: 0;
+              font-size: 18px; 
+          }
+
+          .noticia p {
+              font-size: 14px; 
+              color: #555; 
+          }
+
+          .noticia a {
+              text-decoration: none;
+              color: #007BFF; 
+              font-weight: bold;
+          }
+
+          .noticia a:hover {
+              text-decoration: underline; 
+          }
+      </style>
 </head>
 <body>
     
