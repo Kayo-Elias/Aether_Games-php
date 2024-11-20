@@ -21,16 +21,16 @@
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="noticias.php">Noticias</a></li>
-<<<<<<< Updated upstream
+
                     <li><a href="reviews.php">Reviews</a></li>
-=======
+
                     <li><a href="esports.php">eSports</a></li>
                     <li><a href="reviews.php">Reviews</a></li>
                     <form action="pesquisa.php" method="GET" CLASS="pesquisa-form">
                       <input type="text" name="query" placeholder="Pesquisar...">
                       <button type="submit">🔍</button>
                     </form>
->>>>>>> Stashed changes
+
                 </ul>
              </nav>
          </header>
@@ -38,12 +38,11 @@
                   <!-- principal -->
 
                   <main>
-                    <h2>Últimas notícias</h2>
-<<<<<<< Updated upstream
+    
                     <p>Bem-vindo a nossa página inicial. Aqui você encontrará as notícias e reviews sobre os últimos lançamentos do mundo dos games.</p>
-=======
-                    <p>Bem-vindo a nossa página inicial. Aqui você encontrará as notícias sobre os últimos lançamentos do mundo dos games.</p>
->>>>>>> Stashed changes
+
+                    
+
 
                 </main>
 
