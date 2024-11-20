@@ -32,6 +32,10 @@ $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="noticias.php">Noticias</a></li>
+                    <form action="pesquisa.php" method="GET" CLASS="pesquisa-form">
+                      <input type="text" name="query" placeholder="Pesquisar...">
+                      <button type="submit">🔍</button>
+                    </form>
                 </ul>
              </nav>
          </header>
