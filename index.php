@@ -6,16 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aether Games</title>
         <Link rel="stylesheet" href="css/style.css">
-        <style>
-          
-          .noticia img {
-              width: 350px; 
-              height: 300; 
-              object-fit: cover; 
-              margin-right: 10px; 
-          }
-
-      </style>
+      
 </head>
 <body>
     
@@ -49,18 +40,7 @@
     
                     <p>Bem-vindo a nossa página inicial. Aqui você encontrará as notícias e reviews sobre os últimos lançamentos do mundo dos games.</p>
 
-                     <!-- Seção de Últimas Notícias / Destaques -->
-                     <section class="destaques">
-                    <h2>Últimas Notícias</h2>
-            
-                  <div class="noticia">
-                 <img src="https://compass-ssl.xbox.com/assets/37/27/3727a77d-41ae-4022-b2d7-022b093c0551.jpg?n=Fable_GLP-Page-Hero-1084_1920x1080.jpg" alt="Notícia 1">
-                 <h3><a href="noticia1.php">Insider já viu Fable rodando e diz: “DNA de The Witcher”</a></h3>
-                 <p>Ao que parece, um vídeo vazado de Fable chegou ao jornalista Jez Corden, que explicou elementos do gameplay que assistiu</p>
-                 <a href="noticia1.php">Leia mais</a>
-                 </div>
-
-                 </section>
+                     
 
                     <!--seção de redes sociais-->
                     <section class="redes sociais">
