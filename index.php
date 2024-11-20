@@ -1,3 +1,14 @@
+<?php 
+include 'db.php'; // serve pra incluir o banco de dados
+
+$query = "SELECT * FROM noticias ORBER BY  data DESC LIMIT 5";
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+$noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
