@@ -10,7 +10,7 @@
           
           .noticia img {
               width: 150px; 
-              height: auto; 
+              height: 100; 
               object-fit: cover; 
               margin-right: 10px; 
           }
