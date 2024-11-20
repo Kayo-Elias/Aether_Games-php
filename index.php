@@ -9,8 +9,8 @@
         <style>
           
           .noticia img {
-              width: 150px; 
-              height: 100; 
+              width: 350px; 
+              height: 300; 
               object-fit: cover; 
               margin-right: 10px; 
           }
