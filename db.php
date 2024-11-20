@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
+$host = 'kayo';
 $dbname = 'aether_games';
-$username = 'root';    //usuario
-$password = '';        //senha
+$username = 'kayo';    //usuario
+$password = 'kayo55811111123';        //senha
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname$dbname", $username, $password);
