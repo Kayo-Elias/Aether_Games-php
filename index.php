@@ -26,9 +26,14 @@
                     <li><a href="lancamentos.php">Lançamentos</a></li>
                     <li><a href="esports.php">eSports</a></li>
                     <li><a href="reviews.php">Reviews</a></li>
-
-                      <h2>Siga-nos nas redes sociais</h2>
-                      <div class="redes-sociais-container">
+                    <form action="pesquisa.php" method="GET" CLASS="pesquisa-form">
+                      <input type="text" name="query" placeholder="Pesquisar...">
+                      <button type="submit">🔍</button>
+                    </form>
+                    </ul>
+                    </nav>
+                    <div class="redes-sociais-container">
+                    <h2>Siga-nos nas redes sociais:</h2>
             <a href="https://twitter.com/aethergames" target="_blank">
             <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
 </a>
@@ -42,14 +47,6 @@
             <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
 </a>
             </div>
-            </div>
-                    <form action="pesquisa.php" method="GET" CLASS="pesquisa-form">
-                      <input type="text" name="query" placeholder="Pesquisar...">
-                      <button type="submit">🔍</button>
-                    </form>
-
-                </ul>
-             </nav>
          </header>
          
                   <!-- principal -->
