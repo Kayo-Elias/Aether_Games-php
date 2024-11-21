@@ -45,6 +45,14 @@ header {
     padding: 10px 20px;
 
 }
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+
+}
   
 nav ul {
      list-style: none;
@@ -62,20 +70,26 @@ nav ul li a:hover {
     color: #007bff
 }
 
+.pesquisa-form {
+  margin-top: 10px;
+}
+
 .redes-sociais-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .redes-sociais-container h2{
-    margin: 0;
     font-size: 1em;
   }
   
   .rede-social-icon {
     width: 24px;
     height: 24px;
+    margin-right: 10px;
     transition: transform 0.2s; /* efeito ao passar o mouse*/
   }
   
