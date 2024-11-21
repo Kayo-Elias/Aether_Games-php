@@ -62,6 +62,21 @@ nav ul li a:hover {
     color: #007bff
 }
 
+.redes-sociais-container {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .rede-social-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+  }
+  
+  .rede-social-icon:hover {
+    transform: scale(1.2);
+  }
+  
 main {
 padding: 20px;
 
