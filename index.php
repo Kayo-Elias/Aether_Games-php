@@ -20,6 +20,7 @@
             </div>
 
             <div class="redes-sociais-container">
+              <p>Siga-nos nas redes sociais:</p>
             <a href="https://twitter.com/aethergames" target="_blank">
             <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
 </a>
