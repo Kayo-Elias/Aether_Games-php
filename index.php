@@ -30,7 +30,7 @@
             <img src="https://th.bing.com/th/id/R.735dda68880a385ce8cc5be4f3c5fcd6?rik=qSxRw2lCZYy9Mw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG11.png&ehk=QVCbfkCKi8pJLF08bRkS%2fLeMqLTnJQf402WRaIdN6jE%3d&risl=&pid=ImgRaw&r=0" alt="Instagram" class="rede-social-icon">
 </a>
             <a href="https://youtube.com/aethergames" target="_blank">
-            <img src="https://pngimg.com/uploads/youtube/youtube_PNG102349.png" alt="YouTube" class="rede-social-icon">
+            <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
 </a>
             </div>
             </div>
