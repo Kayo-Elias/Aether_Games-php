@@ -64,19 +64,25 @@ nav ul li a:hover {
 
 .redes-sociais-container {
     display: flex;
+    align-items: center;
     gap: 15px;
+  }
+
+  .redes-sociais-container h2{
+    margin: 0;
+    font-size: 1em;
   }
   
   .rede-social-icon {
     width: 24px;
     height: 24px;
-    transition: transform 0.2s;
+    transition: transform 0.2s; /* efeito ao passar o mouse*/
   }
   
   .rede-social-icon:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* tamanho aumenta ao passar mouse */
   }
-  
+
 main {
 padding: 20px;
 
