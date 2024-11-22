@@ -11,7 +11,18 @@ body {
   line-height: 1.6;
 }
 
-/* Logo e cabeçalho */
+/* Cabeçalho */
+header {
+  background-color: #212121;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative; 
+}
+
+/* Logo e título */
 .logo-container {
   display: flex;
   align-items: center;
@@ -23,23 +34,10 @@ body {
   height: auto;
 }
 
-/* Cabeçalho */
-header {
-  background-color: #212121;
-  color: white;
-  display: flex;
-  flex-direction: column;  
-  align-items: center;     
-  padding: 10px 20px;
-  position: relative;      
-}
-
 /* Menu de navegação */
 nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 10px; 
+  flex-grow: 1;
+  text-align: center; 
 }
 
 nav ul {
@@ -62,13 +60,12 @@ nav ul li a:hover {
 
 
 .pesquisa-form {
+  position: absolute;
+  top: 10px;
+  right: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 5px;
-  position: absolute;
-  top: 10px;  
-  right: 20px; 
 }
 
 .pesquisa-form input {
@@ -92,19 +89,21 @@ nav ul li a:hover {
   background-color: #0056b3;
 }
 
-/* Redes sociais */
+
 .redes-sociais-container {
+  position: absolute;
+  top: 50px; 
+  right: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: flex-start;
   gap: 10px;
-  margin-top: 10px; 
 }
 
 .redes-sociais-container h2 {
   margin: 0;
   font-size: 1em;
-  color: white; 
+  color: white;
 }
 
 .rede-social-icon {
