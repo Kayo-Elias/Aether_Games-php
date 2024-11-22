@@ -7,27 +7,31 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <!-- cabeçalho -->
     <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="img/Aether.png" alt="Logo do site" class="logo">
-                <h1>Aether Games</h1>
-            </div>
-            <nav>
-                <ul class="nav-items">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="noticias.php">Noticias</a></li>
-                    <li><a href="lancamentos.php">Lançamentos</a></li>
-                    <li><a href="esports.php">eSports</a></li>
-                    <li><a href="reviews.php">Reviews</a></li>
-                </ul>
-            </nav>
-            <form action="pesquisa.php" method="GET" class="pesquisa-form">
-                <input type="text" name="query" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
-            </form>
+        <div class="logo-container">
+            <img src="img/Aether.png" alt="Logo do site" class="logo">
+            <h1>Aether Games</h1>
         </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="noticias.php">Noticias</a></li>
+                <li><a href="lancamentos.php">Lançamentos</a></li>
+                <li><a href="esports.php">eSports</a></li>
+                <li><a href="reviews.php">Reviews</a></li>
+            </ul>
+        </nav>
+
+        <!-- Barra de Pesquisa -->
+        <form action="pesquisa.php" method="GET" class="pesquisa-form">
+            <input type="text" name="query" placeholder="Pesquisar...">
+            <button type="submit">🔍</button>
+        </form>
+
+        <!-- Redes Sociais -->
         <div class="redes-sociais-container">
             <h2>Siga-nos nas redes sociais:</h2>
             <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
@@ -54,5 +58,6 @@
     <footer>
         <p>&copy; 2024 Aether Games</p>
     </footer>
+
 </body>
 </html>
