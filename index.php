@@ -26,12 +26,13 @@
                     <li><a href="lancamentos.php">Lançamentos</a></li>
                     <li><a href="esports.php">eSports</a></li>
                     <li><a href="reviews.php">Reviews</a></li>
-                    <form action="pesquisa.php" method="GET" CLASS="pesquisa-form">
-                      <input type="text" name="query" placeholder="Pesquisar...">
-                      <button type="submit">🔍</button>
-                    </form>
                     </ul>
                     </nav>
+                    <form action="pesquisa.php" method="GET" CLASS="pesquisa-form">
+                    <input type="text" name="query" placeholder="Pesquisar...">
+                    <button type="submit">🔍</button>
+                    </form>
+                    </div>
                     <div class="redes-sociais-container">
                     <h2>Siga-nos nas redes sociais:</h2>
             <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
