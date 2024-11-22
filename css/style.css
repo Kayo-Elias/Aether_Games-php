@@ -11,11 +11,21 @@ body {
   line-height: 1.6;
 }
 
-/* Logo e cabeçalho */
+/* Cabeçalho */
+header {
+  background-color: #212121;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px; 
 }
 
 .logo {
@@ -23,33 +33,15 @@ body {
   height: auto;
 }
 
-/* Texto do topo */
-.topo-texto {
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 10px; /* Espaçamento interno */
-  font-size: 1em;
-}
-
-header {
-  background-color: #212121;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-header nav {
-  flex-grow: 1;
-  text-align: center; /* Centraliza o menu no topo */
-}
+/* Navegação */
+nav {
+  margin-bottom: 10px; 
 
 nav ul {
   list-style: none;
-  display: inline-flex;
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px; 
   padding: 0;
   margin: 0;
 }
@@ -67,14 +59,18 @@ nav ul li a:hover {
 /* Barra de pesquisa */
 .pesquisa-form {
   display: flex;
-  align-items: center;
   gap: 5px;
+  margin-bottom: 10px; 
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 300px;
 }
 
 .pesquisa-form input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
 }
 
 .pesquisa-form button {
@@ -93,16 +89,17 @@ nav ul li a:hover {
 
 /* Redes sociais */
 .redes-sociais-container {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; 
+  align-items: flex-end;
+  width: 100%;
   gap: 10px;
 }
 
 .redes-sociais-container h2 {
   margin: 0;
   font-size: 1em;
+  text-align: right;
 }
 
 .rede-social-icon {
