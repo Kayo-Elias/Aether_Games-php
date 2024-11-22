@@ -1,12 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e0e7f1;
+  color: black;
+  line-height: 1.6;
+}
+
 /* Cabeçalho */
 header {
   background-color: #212121;
   color: white;
-  padding: 20px;
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px; 
 }
 
 .logo-container {
@@ -20,40 +37,16 @@ header {
   height: auto;
 }
 
-/* Navegação */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center; 
-  gap: 30px;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  color: #007bff;
-}
-
-/* Barra de pesquisa */
 .pesquisa-form {
   display: flex;
   gap: 5px;
-  justify-content: flex-end;
-  width: 100%; 
-  max-width: 300px; 
 }
 
 .pesquisa-form input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
+  width: 200px;
 }
 
 .pesquisa-form button {
@@ -70,16 +63,40 @@ nav ul li a:hover {
   background-color: #0056b3;
 }
 
+/* Navegação */
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0; /* Espaçamento entre o logo e a navegação */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #007bff;
+}
+
 /* Redes sociais */
 .redes-sociais-container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  gap: 10px;
+  align-items: flex-end;
+  margin-top: 10px;
 }
 
 .redes-sociais-container h2 {
-  margin: 0;
+  margin: 0 0 5px 0;
   font-size: 1em;
 }
 
@@ -92,3 +109,17 @@ nav ul li a:hover {
 .rede-social-icon:hover {
   transform: scale(1.2);
 }
+
+/* Conteúdo principal */
+main {
+  padding: 20px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
