@@ -16,10 +16,11 @@ header {
   background-color: #212121;
   color: white;
   display: flex;
+  flex-direction: column;  
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 20px;
-  position: relative; 
+  position: relative;
 }
 
 /* Logo e título */
@@ -27,6 +28,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px; 
 }
 
 .logo {
@@ -36,13 +38,15 @@ header {
 
 /* Menu de navegação */
 nav {
-  flex-grow: 1;
-  text-align: center; 
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;  
 }
 
 nav ul {
   list-style: none;
-  display: inline-flex;
+  display: flex;
   gap: 20px;
   padding: 0;
   margin: 0;
@@ -92,12 +96,11 @@ nav ul li a:hover {
 
 .redes-sociais-container {
   position: absolute;
-  top: 50px; 
+  top: 50px;  
   right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+  display: flex; 
+  gap: 15px; 
+  align-items: center;  
 }
 
 .redes-sociais-container h2 {
