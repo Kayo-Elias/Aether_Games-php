@@ -11,24 +11,23 @@ body {
   line-height: 1.6;
 }
 
-/* Cabeçalho */
 header {
   background-color: #212121;
   color: white;
   display: flex;
-  flex-direction: column;  
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   padding: 10px 20px;
   position: relative;
+  width: 100%;
 }
 
-/* Logo e título */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .logo {
@@ -36,12 +35,11 @@ header {
   height: auto;
 }
 
-/* Menu de navegação */
 nav {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 }
 
 nav ul {
@@ -61,7 +59,6 @@ nav ul a {
 nav ul li a:hover {
   color: #007bff;
 }
-
 
 .pesquisa-form {
   position: absolute;
@@ -93,14 +90,13 @@ nav ul li a:hover {
   background-color: #0056b3;
 }
 
-
 .redes-sociais-container {
   position: absolute;
-  top: 50px;  
+  top: 50px;
   right: 20px;
-  display: flex; 
-  gap: 15px; 
-  align-items: center;  
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 .redes-sociais-container h2 {
@@ -119,12 +115,10 @@ nav ul li a:hover {
   transform: scale(1.2);
 }
 
-/* Conteúdo principal */
 main {
   padding: 20px;
 }
 
-/* Rodapé */
 footer {
   background-color: #212121;
   color: white;
