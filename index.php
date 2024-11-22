@@ -15,6 +15,7 @@
             <h1>Aether Games</h1>
         </div>
 
+        <!-- Menu de navegação -->
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
@@ -49,7 +50,7 @@
         </div>
     </header>
 
-    <!-- principal -->
+    <!-- conteúdo principal -->
     <main>
         <p>Bem-vindo a nossa página inicial. Aqui você encontrará as notícias e reviews sobre os últimos lançamentos do mundo dos games.</p>
     </main>
