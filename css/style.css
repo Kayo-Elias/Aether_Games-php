@@ -23,27 +23,23 @@ body {
   height: auto;
 }
 
-/* Texto do topo */
-.topo-texto {
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 10px; /* Espaçamento interno */
-  font-size: 1em;
-}
-
+/* Cabeçalho */
 header {
   background-color: #212121;
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;  
+  align-items: center;     
   padding: 10px 20px;
+  position: relative;      
 }
 
-header nav {
-  flex-grow: 1;
-  text-align: center; /* Centraliza o menu no topo */
+/* Menu de navegação */
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px; 
 }
 
 nav ul {
@@ -64,17 +60,22 @@ nav ul li a:hover {
   color: #007bff;
 }
 
-/* Barra de pesquisa */
+
 .pesquisa-form {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 5px;
+  position: absolute;
+  top: 10px;  
+  right: 20px; 
 }
 
 .pesquisa-form input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 200px;
 }
 
 .pesquisa-form button {
@@ -93,21 +94,22 @@ nav ul li a:hover {
 
 /* Redes sociais */
 .redes-sociais-container {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Posiciona acima das redes sociais */
+  align-items: center; 
   gap: 10px;
+  margin-top: 10px; 
 }
 
 .redes-sociais-container h2 {
   margin: 0;
   font-size: 1em;
+  color: white; 
 }
 
 .rede-social-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   transition: transform 0.2s;
 }
 
