@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <<<<<<< HEAD
 
@@ -72,6 +73,10 @@
 </body>
 </html>
 =======
+=======
+<?php include 'db.php'; ?>
+<!DOCTYPE html>
+>>>>>>> João-Pedro
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -125,8 +130,31 @@
 
     <!-- conteúdo principal -->
     <main>
+<<<<<<< HEAD
         <p>Bem-vindo a nossa página inicial. Aqui você encontrará as notícias e reviews sobre os últimos lançamentos do mundo dos games.</p>
     </main>
+=======
+    <h1>Últimas Notícias</h1>
+    <?php
+    $sql = "SELECT titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
+    $resultado = $conexao->query($sql);
+
+    if ($resultado->num_rows > 0):
+        while ($noticia = $resultado->fetch_assoc()): ?>
+            <article>
+                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
+                <small>Publicado em: <?php echo $noticia['data']; ?></small>
+            </article>
+            <hr>
+        <?php endwhile;
+    else: ?>
+        <p>Nenhuma notícia encontrada.</p>
+    <?php endif; ?>
+    <a href="noticias.php">Ver todas as notícias</a>
+</main>
+
+>>>>>>> João-Pedro
 
     <!-- rodapé -->
     <footer>
@@ -135,4 +163,7 @@
 
 </body>
 </html>
+<<<<<<< HEAD
+>>>>>>> João-Pedro
+=======
 >>>>>>> João-Pedro
