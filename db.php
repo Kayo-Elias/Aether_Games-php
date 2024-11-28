@@ -8,6 +8,16 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Erro ao conectar ao banco de dados:" . $e->getMessage());
+$host = 'localhost';      
+$usuario = 'root';        
+$senha = '';              
+$banco = 'aether_games'; 
+
+// Criar conexão com o banco de dados
+$conexao = new mysqli($host, $usuario, $senha, $banco);
+
+// Verificar se houve erro na conexão
+if ($conexao->connect_error) {
+    die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
 }
 ?>
