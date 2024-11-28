@@ -2,8 +2,7 @@
 
 include 'db.php';
 
-
-$sql = "SELECT id, titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC";
+$sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC";
 $resultado = $conexao->query($sql);
 ?>
 <!DOCTYPE html>
@@ -33,16 +32,21 @@ $resultado = $conexao->query($sql);
     <main>
         <h1>Notícias Recentes</h1>
         <?php if ($resultado->num_rows > 0): ?>
-            <ul>
+            <div class="noticias-lista">
                 <?php while ($noticia = $resultado->fetch_assoc()): ?>
-                    <li>
+                    <article>
                         <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                        
+                        <?php if (!empty($noticia['imagem'])): ?>
+                            <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" style="width: 100%; max-width: 300px;">
+                        <?php endif; ?>
+                        
                         <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
                         <small>Publicado em: <?php echo $noticia['data']; ?></small>
-                    </li>
+                    </article>
                     <hr>
                 <?php endwhile; ?>
-            </ul>
+            </div>
         <?php else: ?>
             <p>Nenhuma notícia encontrada.</p>
         <?php endif; ?>
