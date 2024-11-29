@@ -32,7 +32,11 @@
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #5b9bd5;
+            color: #f8f808;
+            text-shadow:-1px -1px 0 #000, 
+                1px -1px 0 #000,  
+                -1px 1px 0 #000,  
+                1px 1px 0 #000;
         }
 
         label {
@@ -54,8 +58,8 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #5b9bd5;
-            color: white;
+            background-color: #f8f808;
+            color: black;
             border: none;
             border-radius: 4px;
             font-size: 16px;
@@ -65,7 +69,7 @@
         }
 
         button:hover {
-            background-color: #3a77d2;
+            background-color: #adad53;
         }
 
         .link {
