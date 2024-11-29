@@ -1,10 +1,4 @@
-<?php
 
-include 'db.php';
-
-$sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC";
-$resultado = $conexao->query($sql);
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

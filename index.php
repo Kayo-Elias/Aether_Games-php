@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 <?php include 'db.php'; ?>
+=======
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -33,7 +37,40 @@
             <button type="submit">🔍</button>
         </form>
 
+<<<<<<< Updated upstream
         <!-- Redes Sociais -->
+=======
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <h1>Últimas Notícias</h1>
+        <a href="noticias.php">Ver todas as notícias</a>
+
+        <div class="noticias-container">
+        
+            <article>
+                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
+                <small>Publicado em: <?php echo $noticia['data']; ?></small>
+                <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+            </article>
+            <hr>
+       
+            <p>Nenhuma notícia encontrada.</p>
+       
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+>>>>>>> Stashed changes
         <div class="redes-sociais-container">
             <h2>Siga-nos nas redes sociais:</h2>
             <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
