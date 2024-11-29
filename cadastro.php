@@ -17,7 +17,15 @@
            justify-content: center;
         }
 
+        .container {
+          background: white;
+          padding: 30px 40px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          width: 100%;
+          max-width: 400px;
 
+        }
 
    
         </style>
