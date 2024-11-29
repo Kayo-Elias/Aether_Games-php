@@ -9,33 +9,78 @@
 </head>
 <body>
 
-    <!-- cabeçalho -->
+    <!-- Cabeçalho -->
     <header>
-        <div class="logo-container">
-            <img src="img/Aether.png" alt="Logo do site" class="logo">
-            <h1>Aether Games</h1>
+        <div class="header-left">
+            <!-- Logo e título -->
+            <div class="logo-container">
+                <img src="img/Aether.png" alt="Logo do site" class="logo">
+                <h1>Aether Games</h1>
+            </div>
         </div>
 
-        <!-- Menu de navegação -->
-        <nav>
-            <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="noticias.php">Noticias</a></li>
-                <li><a href="lancamentos.php">Lançamentos</a></li>
-                <li><a href="esports.php">eSports</a></li>
-                <li><a href="reviews.php">Reviews</a></li>
-            </ul>
-        </nav>
+        <div class="header-center">
+            <!-- Botões de navegação (Início, Notícias, Reviews, eSports) -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.php">Início</a></li>
+                    <li><a href="noticias.php">Notícias</a></li>
+                    <li><a href="reviews.php">Reviews</a></li>
+                    <li><a href="esports.php">eSports</a></li>
+                </ul>
+            </nav>
+        </div>
 
-        <!-- Barra de Pesquisa -->
-        <form action="pesquisa.php" method="GET" class="pesquisa-form">
-            <input type="text" name="query" placeholder="Pesquisar...">
-            <button type="submit">🔍</button>
-        </form>
+        <div class="header-right">
+            <!-- Barra de Pesquisa -->
+            <form action="pesquisa.php" method="GET" class="pesquisa-form">
+                <input type="text" name="query" placeholder="Pesquisar...">
+                <button type="submit">🔍</button>
+            </form>
 
-        <!-- Redes Sociais -->
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <button class="login-button">Login</button>
+                <button class="register-button">Cadastrar-se</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <h1>Últimas Notícias</h1>
+        <a href="noticias.php">Ver todas as notícias</a>
+
+        <div class="noticias-container">
+        <?php
+$sql = "SELECT id, titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
+$resultado = $conexao->query($sql);
+
+if ($resultado->num_rows > 0):
+    while ($noticia = $resultado->fetch_assoc()):
+?>
+        <article>
+            <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+            <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
+            <small>Publicado em: <?php echo $noticia['data']; ?></small>
+            <!-- Corrigido: fechando a tag <a> corretamente -->
+            <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+        </article>
+        <hr>
+<?php
+    endwhile;
+else:
+?>
+    <p>Nenhuma notícia encontrada.</p>
+<?php endif; ?>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
         <div class="redes-sociais-container">
-            <h2>Siga-nos nas redes sociais:</h2>
+            <h2>Siga-nos:</h2>
             <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
                 <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
             </a>
@@ -49,33 +94,7 @@
                 <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
             </a>
         </div>
-    </header>
 
-    <!-- conteúdo principal -->
-    <main>
-    <h1>Últimas Notícias</h1>
-    <?php
-    $sql = "SELECT titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
-    $resultado = $conexao->query($sql);
-
-    if ($resultado->num_rows > 0):
-        while ($noticia = $resultado->fetch_assoc()): ?>
-            <article>
-                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
-                <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
-                <small>Publicado em: <?php echo $noticia['data']; ?></small>
-            </article>
-            <hr>
-        <?php endwhile;
-    else: ?>
-        <p>Nenhuma notícia encontrada.</p>
-    <?php endif; ?>
-    <a href="noticias.php">Ver todas as notícias</a>
-</main>
-
-
-    <!-- rodapé -->
-    <footer>
         <p>&copy; 2024 Aether Games</p>
     </footer>
 
