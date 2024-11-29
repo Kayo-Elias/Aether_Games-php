@@ -55,7 +55,21 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
- 
+
+        button:hover {
+            background-color: #3a77d2;
+        }
+        .link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #5b9bd5;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
 
 
 
