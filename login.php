@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
         </form>
-        <a href="cadastro.html" class="link">Ainda não tem uma conta? Cadastre-se</a>
+        <a href="cadastro.php" class="link">Ainda não tem uma conta? Cadastre-se</a>
     </div>
 </body>
 </html>

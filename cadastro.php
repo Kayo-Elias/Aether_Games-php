@@ -21,11 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar-se</title>
-    <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastrar-se</title>
     <style>
         * {
             margin: 0;
@@ -117,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Cadastrar</button>
         </form>
-        <a href="login.html" class="link">Já possui uma conta? Faça login</a>
+        <a href="login.php" class="link">Já possui uma conta? Faça login</a>
     </div>
 </body>
 </html>
