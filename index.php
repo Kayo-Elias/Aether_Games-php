@@ -1,4 +1,7 @@
-<?php include 'db.php'; ?>
+<?php 
+include 'bd.php'; 
+session_start(); // Inicia a sessão
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -32,17 +35,17 @@
         </div>
 
         <div class="header-right">
-            <!-- Barra de Pesquisa -->
-            <form action="pesquisa.php" method="GET" class="pesquisa-form">
-                <input type="text" name="query" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
-            </form>
-
-            <!-- Botões de Login e Cadastrar-se -->
-            <div class="auth-buttons">
-                <button class="login-button">Login</button>
-                <button class="register-button">Cadastrar-se</button>
-            </div>
+            <!-- Verifica se o usuário está logado -->
+            <?php if (isset($_SESSION['nome'])): ?>
+                <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
+                <a href="logout.php"><button class="logout-button">Sair</button></a>
+            <?php else: ?>
+                <!-- Botões de Login e Cadastrar-se -->
+                <div class="auth-buttons">
+                    <a href="login.php"><button class="login-button">Login</button></a>
+                    <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+                </div>
+            <?php endif; ?>
         </div>
     </header>
 
@@ -53,27 +56,25 @@
 
         <div class="noticias-container">
         <?php
-$sql = "SELECT id, titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
-$resultado = $conexao->query($sql);
+        $sql = "SELECT id, titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
+        $resultado = $conexao->query($sql);
 
-if ($resultado->num_rows > 0):
-    while ($noticia = $resultado->fetch_assoc()):
-?>
-        <article>
-            <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
-            <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
-            <small>Publicado em: <?php echo $noticia['data']; ?></small>
-            <!-- Corrigido: fechando a tag <a> corretamente -->
-            <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
-        </article>
-        <hr>
-<?php
-    endwhile;
-else:
-?>
-    <p>Nenhuma notícia encontrada.</p>
-<?php endif; ?>
-
+        if ($resultado->num_rows > 0):
+            while ($noticia = $resultado->fetch_assoc()):
+        ?>
+            <article>
+                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
+                <small>Publicado em: <?php echo $noticia['data']; ?></small>
+                <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+            </article>
+            <hr>
+        <?php
+            endwhile;
+        else:
+        ?>
+            <p>Nenhuma notícia encontrada.</p>
+        <?php endif; ?>
         </div>
     </main>
 
