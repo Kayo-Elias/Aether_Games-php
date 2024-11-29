@@ -2,6 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <title>Cadastrar-se</title>
+    <style>
+        * {
+           margin:0;
+           padding: 0;
+           box-sizing: border-box;
+        }
+        body {
+           font-family: Arial, sans-serif;
+           background: linear-gradient(135deg, #5b9bd5, #2d89ef);
+           color :#333;
+           display: flex;
+           justify-content: center;
+        }
+
+
+
+   
+        </style>
+</head>
+<body>
+    <div class="container">
         <h1>Cadastro</h1>
         <form method="POST" action="">
             <label for="nome">Nome:</label>
