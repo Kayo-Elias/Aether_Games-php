@@ -1,5 +1,5 @@
 <?php
-include 'bd.php'; // Inclui a conexão com o banco
+include 'db.php'; // Inclui a conexão com o banco
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
