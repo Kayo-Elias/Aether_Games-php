@@ -1,6 +1,11 @@
 <?php 
-include 'db.php'; 
+include_once 'db.php'; 
 session_start(); // Inicia a sessão
+
+// Verifica se a conexão foi estabelecida
+if (!isset($conexao)) {
+    die("Erro: Não foi possível conectar ao banco de dados.");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,7 +20,6 @@ session_start(); // Inicia a sessão
     <!-- Cabeçalho -->
     <header>
         <div class="header-left">
-            <!-- Logo e título -->
             <div class="logo-container">
                 <img src="img/Aether.png" alt="Logo do site" class="logo">
                 <h1>Aether Games</h1>
@@ -23,7 +27,6 @@ session_start(); // Inicia a sessão
         </div>
 
         <div class="header-center">
-            <!-- Botões de navegação (Início, Notícias, Reviews, eSports) -->
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.php">Início</a></li>
@@ -35,17 +38,17 @@ session_start(); // Inicia a sessão
         </div>
 
         <div class="header-right">
-            <!-- Verifica se o usuário está logado -->
-            <?php if (isset($_SESSION['nome'])): ?>
-                <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
-                <a href="logout.php"><button class="logout-button">Sair</button></a>
-            <?php else: ?>
-                <!-- Botões de Login e Cadastrar-se -->
-                <div class="auth-buttons">
-                    <a href="login.php"><button class="login-button">Login</button></a>
-                    <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
-                </div>
-            <?php endif; ?>
+            <!-- Barra de Pesquisa -->
+            <form action="pesquisa.php" method="GET" class="pesquisa-form">
+                <input type="text" name="query" placeholder="Pesquisar...">
+                <button type="submit">🔍</button>
+            </form>
+
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+            </div>
         </div>
     </header>
 
@@ -95,7 +98,6 @@ session_start(); // Inicia a sessão
                 <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
             </a>
         </div>
-
         <p>&copy; 2024 Aether Games</p>
     </footer>
 
