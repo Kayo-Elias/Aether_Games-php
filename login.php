@@ -29,7 +29,11 @@
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #2d89ef;
+            color: #f8f808;
+            text-shadow:-1px -1px 0 #000, 
+                1px -1px 0 #000,  
+                -1px 1px 0 #000,  
+                1px 1px 0 #000;
         }
         label {
             font-size: 14px;
@@ -48,8 +52,8 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #2d89ef;
-            color: white;
+            background-color: #f8f808;
+            color: black;
             border: none;
             border-radius: 4px;
             font-size: 16px;
@@ -58,14 +62,14 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #1e5cbf;
+            background-color: #adad53;
         }
         .link {
             display: block;
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
-            color: #2d89ef;
+            color: black;
             text-decoration: none;
         }
         .link:hover {
