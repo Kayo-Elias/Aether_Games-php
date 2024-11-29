@@ -16,7 +16,6 @@
            display: flex;
            justify-content: center;
         }
-
         .container {
           background: white;
           padding: 30px 40px;
@@ -24,10 +23,43 @@
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
           width: 100%;
           max-width: 400px;
-
         }
+         h1 {
+          text-align: center;
+          margin-bottom: 20px;
+          color: #5b9bd5;
+         }
+        label {
+             font-size: 14px;
+             font-weight: bold;
+             display: block;
+             margin-bottom: 8px
+        }
+        input  {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5b9bd5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+ 
 
-   
+
+
+
         </style>
 </head>
 <body>
