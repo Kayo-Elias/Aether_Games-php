@@ -1,4 +1,4 @@
-<?php 
+<?php  
 include_once 'db.php'; 
 session_start(); // Inicia a sessão
 
@@ -58,7 +58,7 @@ if (!isset($conexao)) {
 
         <div class="noticias-container">
         <?php
-        $sql = "SELECT id, titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
+        $sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
         $resultado = $conexao->query($sql);
 
         if ($resultado->num_rows > 0):
@@ -66,11 +66,12 @@ if (!isset($conexao)) {
         ?>
             <article>
                 <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                <?php if (!empty($noticia['imagem'])): ?>
+                    <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia">
+                <?php endif; ?>
                 <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
-                <small>Publicado em: <?php echo $noticia['data']; ?></small>
-                <a href="noticias.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+                <a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
             </article>
-            <hr>
         <?php
             endwhile;
         else:
