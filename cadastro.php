@@ -5,37 +5,44 @@
     <title>Cadastrar-se</title>
     <style>
         * {
-           margin:0;
-           padding: 0;
-           box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
         body {
-           font-family: Arial, sans-serif;
-           background: linear-gradient(135deg, #5b9bd5, #2d89ef);
-           color :#333;
-           display: flex;
-           justify-content: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #5b9bd5, #2d89ef);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
         .container {
-          background: white;
-          padding: 30px 40px;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          width: 100%;
-          max-width: 400px;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
         }
-         h1 {
-          text-align: center;
-          margin-bottom: 20px;
-          color: #5b9bd5;
-         }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #5b9bd5;
+        }
+
         label {
-             font-size: 14px;
-             font-weight: bold;
-             display: block;
-             margin-bottom: 8px
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
         }
-        input  {
+
+        input {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -43,6 +50,7 @@
             border-radius: 4px;
             font-size: 16px;
         }
+
         button {
             width: 100%;
             padding: 10px;
@@ -59,6 +67,7 @@
         button:hover {
             background-color: #3a77d2;
         }
+
         .link {
             display: block;
             text-align: center;
@@ -67,14 +76,11 @@
             color: #5b9bd5;
             text-decoration: none;
         }
+
         .link:hover {
             text-decoration: underline;
         }
-
-
-
-
-        </style>
+    </style>
 </head>
 <body>
     <div class="container">
