@@ -69,7 +69,7 @@ if (!isset($conexao)) {
                 <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
                 <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
                 <small>Publicado em: <?php echo $noticia['data']; ?></small>
-                <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+                <a href="noticias.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
             </article>
             <hr>
         <?php
