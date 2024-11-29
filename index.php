@@ -50,8 +50,38 @@ if (!isset($conexao)) {
             </div>
         </div>
     </header>
-    
-        <!-- Redes Sociais -->
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <h1>Últimas Notícias</h1>
+        <a href="noticias.php">Ver todas as notícias</a>
+
+        <div class="noticias-container">
+        <?php
+        $sql = "SELECT id, titulo, conteudo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
+        $resultado = $conexao->query($sql);
+
+        if ($resultado->num_rows > 0):
+            while ($noticia = $resultado->fetch_assoc()):
+        ?>
+            <article>
+                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
+                <small>Publicado em: <?php echo $noticia['data']; ?></small>
+                <a href="noticias.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+            </article>
+            <hr>
+        <?php
+            endwhile;
+        else:
+        ?>
+            <p>Nenhuma notícia encontrada.</p>
+        <?php endif; ?>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
         <div class="redes-sociais-container">
             <h2>Siga-nos:</h2>
             <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
