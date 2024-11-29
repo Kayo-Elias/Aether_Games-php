@@ -1,4 +1,7 @@
-
+<?php 
+include 'bd.php'; 
+session_start(); // Inicia a sessão
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -44,6 +47,7 @@
             </div>
         </div>
     </header>
+    
         <!-- Redes Sociais -->
         <div class="redes-sociais-container">
             <h2>Siga-nos:</h2>
