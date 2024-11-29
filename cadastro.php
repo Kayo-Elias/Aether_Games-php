@@ -77,8 +77,9 @@
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
-            color: #5b9bd5;
+            color: black;
             text-decoration: none;
+           
         }
 
         .link:hover {
