@@ -63,7 +63,7 @@ if (!isset($conexao)) {
         $resultado = $conexao->query($sql);
 
         if ($resultado->num_rows > 0):
-            while ($noticia = $resultado->fetch_assoc()):
+            while ($noticia = $resultado->fetch_assoc()): 
         ?>
             <article>
                 <?php if ($noticia['imagem']): ?>
@@ -72,7 +72,7 @@ if (!isset($conexao)) {
                 <h2><?php echo $noticia['titulo']; ?></h2>
                 <p><?php echo substr(htmlspecialchars($noticia['conteudo']), 0, 150) . '...'; ?></p>
                 <small><?php echo $noticia['data']; ?></small>
-                <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+                <a href="noticias.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
             </article>
         <?php endwhile; ?>
         <?php else: ?>
