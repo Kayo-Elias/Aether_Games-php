@@ -153,14 +153,14 @@ article small {
   color: #888;
 }
 
+/* Estilizando as imagens das notícias */
 .noticia-img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 150px; /* Tamanho fixo para garantir consistência */
   margin: 10px 0;
   border-radius: 8px;
-  max-height: 200px;
-  object-fit: cover; /* Ajustado para manter o formato correto das imagens */
+  object-fit: cover; /* Garante que a imagem preencha o espaço mantendo a proporção */
 }
 
 .noticia-completa {
