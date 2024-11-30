@@ -2,7 +2,7 @@
 include 'db.php';
 
 // Pegando todas as notícias, incluindo as de eSports
-$sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC";
+$sql = "SELECT id, titulo, resumo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC";
 $resultado = $conexao->query($sql);
 ?>
 
@@ -50,7 +50,7 @@ $resultado = $conexao->query($sql);
                 <?php if (!empty($noticia['imagem'])): ?>
                     <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
                 <?php endif; ?>
-                <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
+                <p><?php echo nl2br(htmlspecialchars($noticia['resumo'])); ?></p>
                 <small>Publicado em: <?php echo $noticia['data']; ?></small>
             </div>
         <?php endwhile; ?>
