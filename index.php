@@ -69,15 +69,14 @@ if (!isset($conexao)) {
                 <?php if (!empty($noticia['imagem'])): ?>
                     <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
                 <?php endif; ?>
-                <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
-                <a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
+                <p><?php echo substr(htmlspecialchars($noticia['conteudo']), 0, 150) . '...'; ?></p>
+                <small><?php echo $noticia['data']; ?></small>
+                <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
             </article>
-        <?php
-            endwhile;
-        else:
-            echo "<p>Nenhuma notícia encontrada.</p>";
-        endif;
-        ?>
+        <?php endwhile; ?>
+        <?php else: ?>
+            <p>Nenhuma notícia encontrada.</p>
+        <?php endif; ?>
         </div>
     </main>
 
@@ -85,14 +84,17 @@ if (!isset($conexao)) {
     <footer>
         <div class="redes-sociais-container">
             <h2>Siga-nos nas redes sociais</h2>
-            <a href="#" class="rede-social-link">
+            <a href="https://facebook.com" class="rede-social-link">
                 <img src="img/facebook.png" alt="Facebook" class="rede-social-icon">
             </a>
-            <a href="#" class="rede-social-link">
+            <a href="https://twitter.com" class="rede-social-link">
                 <img src="img/twitter.png" alt="Twitter" class="rede-social-icon">
             </a>
-            <a href="#" class="rede-social-link">
+            <a href="https://instagram.com" class="rede-social-link">
                 <img src="img/instagram.png" alt="Instagram" class="rede-social-icon">
+            </a>
+            <a href="https://youtube.com" class="rede-social-link">
+                <img src="img/youtube.png" alt="YouTube" class="rede-social-icon">
             </a>
         </div>
         <p>&copy; 2024 Aether Games. Todos os direitos reservados.</p>
