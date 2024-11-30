@@ -85,17 +85,17 @@ if (!isset($conexao)) {
     <footer>
         <div class="redes-sociais-container">
             <h2>Siga-nos nas redes sociais</h2>
-            <a href="https://facebook.com" class="rede-social-link">
-                <img src="img/facebook.png" alt="Facebook" class="rede-social-icon">
+            <a href="https://facebook.com/aethergames" class="rede-social-link">
+                <img src="https://th.bing.com/th/id/R.2bad70f2d08429a28dfbebd4c237924b?rik=vgEdhJ%2f%2biiEnQQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19748.png&ehk=0ZiZ04ZZ6mSJ5oyPxBh1gy4FSYhegWTWyDpCiI73sbw%3d&risl=&pid=ImgRaw&r=0" alt="Facebook" class="rede-social-icon">
             </a>
-            <a href="https://twitter.com" class="rede-social-link">
-                <img src="img/twitter.png" alt="Twitter" class="rede-social-icon">
+            <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" class="rede-social-link">
+                <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
             </a>
-            <a href="https://instagram.com" class="rede-social-link">
-                <img src="img/instagram.png" alt="Instagram" class="rede-social-icon">
+            <a href="https://www.instagram.com/aethergames1?igsh=dGRhN3k4NWltNzV5" class="rede-social-link">
+                <img src="https://th.bing.com/th/id/R.b473fcad595f09b0afe1270d9016ac8c?rik=UkXeB5L2aE8Biw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG9.png&ehk=GnhAoqBr5eV3LRtLGDB2XElOW7mvkdk29%2byVkqj09y8%3d&risl=&pid=ImgRaw&r=0" alt="Instagram" class="rede-social-icon">
             </a>
-            <a href="https://youtube.com" class="rede-social-link">
-                <img src="img/youtube.png" alt="YouTube" class="rede-social-icon">
+            <a href="https://www.youtube.com/channel/UCZD3jFO-zq_RkJHTnBVOSIg"  class="rede-social-link">
+                <img src="https://toppng.com/uploads/preview/youtube-logo-png-116186698684etjs0nnhw.png" alt="YouTube" class="rede-social-icon">
             </a>
         </div>
         <p>&copy; 2024 Aether Games. Todos os direitos reservados.</p>
