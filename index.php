@@ -46,18 +46,16 @@ if (!isset($conexao)) {
                 <a href="login.php">
             <?php endif; ?>
 
-            <div class="header-right">
-                <!-- Barra de Pesquisa -->
-                <form action="pesquisa.php" method="GET" class="pesquisa-form">
-                    <input type="text" name="query" placeholder="Pesquisar...">
-                    <button type="submit">🔍</button>
-                </form>
+            <!-- Barra de Pesquisa -->
+            <form action="pesquisar.php" method="GET" class="pesquisa-form">
+                <input type="text" name="query" placeholder="Pesquisar..." required>
+                <button type="submit">🔍</button>
+            </form>
 
-                <!-- Botões de Login e Cadastrar-se -->
-                <div class="auth-buttons">
-                    <a href="login.php"><button class="login-button">Login</button></a>
-                    <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
-                </div>
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
             </div>
         </div>
     </header>
