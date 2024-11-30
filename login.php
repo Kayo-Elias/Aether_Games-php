@@ -1,4 +1,35 @@
+<?php
+include 'db.php'; // Inclui a conexão com o banco
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $senha = $_POST['senha'];
+
+    $sql = "SELECT id, nome, senha FROM login_cadastro WHERE email = '$email'";
+    $resultado = $conexao->query($sql);
+
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+
+        if (password_verify($senha, $usuario['senha'])) {
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+            echo "<script>alert('Login realizado com sucesso!'); window.location.href = 'index.php';</script>";
+        } else {
+            echo "<script>alert('Senha incorreta!');</script>";
+        }
+    } else {
+        echo "<script>alert('E-mail não encontrado!');</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +40,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #212121;
@@ -18,6 +50,7 @@
             align-items: center;
             height: 100vh;
         }
+
         .container {
             background: white;
             padding: 30px 40px;
@@ -26,21 +59,25 @@
             width: 100%;
             max-width: 400px;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #f8f808;
+           
+            color:#F2CB15;
             text-shadow:-1px -1px 0 #000, 
                 1px -1px 0 #000,  
                 -1px 1px 0 #000,  
                 1px 1px 0 #000;
         }
+
         label {
             font-size: 14px;
             font-weight: bold;
             display: block;
             margin-bottom: 8px;
         }
+
         input {
             width: 100%;
             padding: 10px;
@@ -49,10 +86,11 @@
             border-radius: 4px;
             font-size: 16px;
         }
+
         button {
             width: 100%;
             padding: 10px;
-            background-color: #f8f808;
+            background-color: #F2CB15;
             color: black;
             border: none;
             border-radius: 4px;
@@ -64,6 +102,7 @@
         button:hover {
             background-color: #adad53;
         }
+
         .link {
             display: block;
             text-align: center;
@@ -72,6 +111,7 @@
             color: black;
             text-decoration: none;
         }
+
         .link:hover {
             text-decoration: underline;
         }
@@ -87,9 +127,8 @@
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
         </form>
-        <a href="cadastro.html" class="link">Ainda não tem uma conta? Cadastre-se</a>
+        <a href="cadastro.php" class="link">Ainda não tem uma conta? Cadastre-se</a>
     </div>
 </body>
 </html>
-
 

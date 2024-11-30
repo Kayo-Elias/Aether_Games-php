@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <?php
 
 $host = 'localhost';      
@@ -14,5 +13,3 @@ if ($conexao->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
 }
 ?>
-=======
->>>>>>> Stashed changes
