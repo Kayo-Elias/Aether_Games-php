@@ -66,10 +66,10 @@ if (!isset($conexao)) {
             while ($noticia = $resultado->fetch_assoc()):
         ?>
             <article>
-                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
-                <?php if (!empty($noticia['imagem'])): ?>
-                    <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
+                <?php if ($noticia['imagem']): ?>
+                    <img src="img/<?php echo $noticia['imagem']; ?>" alt="Imagem da notícia" class="noticia-img">
                 <?php endif; ?>
+                <h2><?php echo $noticia['titulo']; ?></h2>
                 <p><?php echo substr(htmlspecialchars($noticia['conteudo']), 0, 150) . '...'; ?></p>
                 <small><?php echo $noticia['data']; ?></small>
                 <a href="noticia.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
