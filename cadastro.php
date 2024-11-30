@@ -50,7 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #5b9bd5;
+            text-shadow:-1px -1px 0 #000, 
+                1px -1px 0 #000,  
+                -1px 1px 0 #000,  
+                1px 1px 0 #000;
         }
 
         label {
@@ -72,8 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button {
             width: 100%;
             padding: 10px;
-            background-color: #5b9bd5;
-            color: white;
+            background-color: #f8f808;
+            color: black;
             border: none;
             border-radius: 4px;
             font-size: 16px;
@@ -81,9 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+        
 
         button:hover {
-            background-color: #3a77d2;
+            background-color: #adad53;
         }
 
         .link {
@@ -91,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
-            color: #5b9bd5;
+            color: black;
             text-decoration: none;
         }
 
