@@ -95,7 +95,7 @@ if (!isset($conexao)) {
                 <img src="https://th.bing.com/th/id/R.b473fcad595f09b0afe1270d9016ac8c?rik=UkXeB5L2aE8Biw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG9.png&ehk=GnhAoqBr5eV3LRtLGDB2XElOW7mvkdk29%2byVkqj09y8%3d&risl=&pid=ImgRaw&r=0" alt="Instagram" class="rede-social-icon">
             </a>
             <a href="https://www.youtube.com/channel/UCZD3jFO-zq_RkJHTnBVOSIg"  class="rede-social-link">
-                <img src="https://toppng.com/uploads/preview/youtube-logo-png-116186698684etjs0nnhw.png" alt="YouTube" class="rede-social-icon">
+                <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
             </a>
         </div>
         <p>&copy; 2024 Aether Games. Todos os direitos reservados.</p>
