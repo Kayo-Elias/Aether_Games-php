@@ -121,7 +121,7 @@ h1, h2 {
 .noticias-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Reduzi o espaçamento entre as notícias */
+  gap: 10px; /* Ajustado para reduzir o espaçamento entre as notícias */
   justify-content: space-between;
   padding: 20px;
 }
@@ -131,9 +131,9 @@ article {
   color: #fff;
   padding: 15px;
   border-radius: 8px;
-  width: 32%; /* Ajustei para dar um espaçamento menor */
+  width: 32%; /* Ajustado para as notícias ficarem lado a lado */
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-  margin-bottom: 20px; /* Ajustado para reduzir o espaçamento */
+  margin-bottom: 20px;
 }
 
 article h2 {
@@ -157,9 +157,8 @@ article small {
   height: auto;
   margin: 10px 0;
   border-radius: 8px;
-  /* Ajustado para o tamanho das imagens na página de notícias */
   max-height: 200px;
-  object-fit: cover;
+  object-fit: cover; /* Ajustado para manter o formato correto das imagens */
 }
 
 .noticia-completa {
