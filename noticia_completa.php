@@ -2,13 +2,15 @@
 // Conexão com o banco de dados
 include 'db.php';
 
-// Pega o ID da notícia e o tipo (se é de eSports ou não)
+// Pega o ID da notícia e o tipo (se é de eSports ou Review)
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
 
 // Define a tabela a ser consultada com base no tipo
 if ($tipo === 'esports') {
     $tabela = 'esports';
+} elseif ($tipo === 'reviews') {
+    $tabela = 'reviews';
 } else {
     $tabela = 'noticias';
 }
