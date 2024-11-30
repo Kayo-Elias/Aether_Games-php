@@ -29,6 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
     <title>Login</title>
     <style>
         * {
@@ -53,10 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             width: 100%;
             max-width: 400px;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #f8f808;
+           
+            color:#F2CB15;
             text-shadow:-1px -1px 0 #000, 
                 1px -1px 0 #000,  
                 -1px 1px 0 #000,  
@@ -76,10 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 4px;
             font-size: 16px;
         }
+
         button {
             width: 100%;
             padding: 10px;
-            background-color: #f8f808;
+            background-color: #F2CB15;
             color: black;
             border: none;
             border-radius: 4px;
@@ -114,9 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
         </form>
-        <a href="cadastro.html" class="link">Ainda não tem uma conta? Cadastre-se</a>
+        <a href="cadastro.php" class="link">Ainda não tem uma conta? Cadastre-se</a>
     </div>
 </body>
 </html>
-
 

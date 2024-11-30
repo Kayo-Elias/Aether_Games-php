@@ -41,32 +41,47 @@ $resultado = $conexao->query($sql);
         </div>
 
         <div class="header-right">
+        <!-- Verifica se o usuário está logado -->
+        <?php if (isset($_SESSION['nome'])): ?>
+            <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
+            <a href="logout.php">Sair</a>  <!-- Link para sair -->
+        <?php else: ?>
+            <a href="login.php">
+        <?php endif; ?>
+        <div class="header-right">
+            
             <!-- Barra de Pesquisa -->
             <form action="pesquisa.php" method="GET" class="pesquisa-form">
                 <input type="text" name="query" placeholder="Pesquisar...">
                 <button type="submit">🔍</button>
             </form>
         </div>
+
+         <!-- Botões de Login e Cadastrar-se -->
+         <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+            </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main>
         <h1>Todas as Notícias</h1>
-
         <div class="noticias-lista">
+
         <?php
         if ($resultado->num_rows > 0):
             while ($noticia = $resultado->fetch_assoc()):
         ?>
-            <article>
-                <h2><a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>"><?php echo htmlspecialchars($noticia['titulo']); ?></a></h2>
+             <article>
+                <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
                 <?php if (!empty($noticia['imagem'])): ?>
-                    <a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>">
-                        <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
-                    </a>
+                    <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
                 <?php endif; ?>
                 <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
+                <a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>" class="ver-mais">Leia mais</a>
             </article>
+                
         <?php
             endwhile;
         else:

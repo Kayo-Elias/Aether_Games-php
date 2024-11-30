@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>alert('Erro ao cadastrar!');</script>";
     }
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         body {
             font-family: Arial, sans-serif;
-           background-color: #212121;
+            background-color: #212121;
             color: #333;
             display: flex;
             justify-content: center;
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #f8f808;
+            color: #F2CB15;
             text-shadow:-1px -1px 0 #000, 
                 1px -1px 0 #000,  
                 -1px 1px 0 #000,  
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button {
             width: 100%;
             padding: 10px;
-            background-color: #f8f808;
+            background-color: #F2CB15;
             color: black;
             border: none;
             border-radius: 4px;
@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+        
 
         button:hover {
             background-color: #adad53;
@@ -97,7 +98,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-size: 14px;
             color: black;
             text-decoration: none;
-           
         }
 
         .link:hover {
@@ -117,7 +117,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" id="senha" name="senha" required>
             <button type="submit">Cadastrar</button>
         </form>
-        <a href="login.html" class="link">Já possui uma conta? Faça login</a>
+        <a href="login.php" class="link">Já possui uma conta? Faça login</a>
     </div>
 </body>
 </html>
+
