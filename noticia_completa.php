@@ -1,59 +1,60 @@
-<?php
-// Conexão com o banco de dados
-include 'db.php';
+<?php  
+include_once 'db.php'; 
 session_start();
 
-// Captura o ID da notícia
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+// Verifica se o ID da notícia foi passado pela URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-// Consulta para buscar a notícia completa
-$sql = "SELECT titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias WHERE id = $id";
-$resultado = $conexao->query($sql);
+    // Consulta a notícia completa com base no ID
+    $sql = "SELECT * FROM noticias WHERE id = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 
-// Verifica se a notícia foi encontrada
-$noticia = $resultado->num_rows > 0 ? $resultado->fetch_assoc() : null;
-
-// Consulta para buscar os comentários da notícia
-$sql_comentarios = "SELECT usuario, comentario, DATE_FORMAT(data, '%d/%m/%Y %H:%i') AS data FROM comentarios WHERE id_noticia = $id ORDER BY data DESC";
-$resultado_comentarios = $conexao->query($sql_comentarios);
+    // Verifica se a notícia foi encontrada
+    if ($resultado->num_rows > 0) {
+        $noticia = $resultado->fetch_assoc();
+    } else {
+        echo "Notícia não encontrada.";
+        exit;
+    }
+} else {
+    echo "ID da notícia não fornecido.";
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo htmlspecialchars(substr($noticia['conteudo'] ?? 'Notícia completa da Aether Games.', 0, 150)); ?>">
-    <title><?php echo htmlspecialchars($noticia['titulo'] ?? 'Notícia Não Encontrada'); ?> - Aether Games</title>
+    <title><?php echo htmlspecialchars($noticia['titulo']); ?> - Aether Games</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <div class="logo-container">
-        <img src="img/Aether.png" alt="Logo do site" class="logo">
-        <h1><a href="index.php">Aether Games</a></h1>
-       
-        <div class="header-center">
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.php">Início</a></li>
-                    <li><a href="noticias.php">Notícias</a></li>
-                    <li><a href="reviews.php">Reviews</a></li>
-                    <li><a href="esports.php">eSports</a></li>
-                </ul>
-            </nav>
-        </div>
-    <div class="user-options">
-        <?php if (isset($_SESSION['nome'])): ?>
-            <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
-            <a href="logout.php">Sair</a>
-        <?php else: ?>
-            <a href="login.php"></a>
-        <?php endif; ?>
-    </div>
-</header>
 
-<main> 
-<div class="header-right">
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-left">
+            <div class="logo-container">
+                <img src="img/Aether.png" alt="Logo do site" class="logo">
+                <h1>Aether Games</h1>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="noticias.php" class="ativo">Notícias</a></li>
+                <li><a href="reviews.php">Reviews</a></li>
+                <li><a href="esports.php">eSports</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="header-right">
             <!-- Verifica se o usuário está logado -->
             <?php if (isset($_SESSION['nome'])): ?>
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
@@ -74,46 +75,40 @@ $resultado_comentarios = $conexao->query($sql_comentarios);
                 <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
             </div>
         </div>
-    </header>
-    <?php if ($noticia): ?>
+    <!-- Conteúdo Principal -->
+    <main>
         <article>
             <h1><?php echo htmlspecialchars($noticia['titulo']); ?></h1>
             <?php if (!empty($noticia['imagem'])): ?>
                 <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
             <?php endif; ?>
-            <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
-            <small>Publicado em: <?php echo $noticia['data']; ?></small>
+            <p><strong>Publicado em:</strong> <?php echo htmlspecialchars($noticia['data']); ?></p>
+            <div class="conteudo-completo">
+                <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
+            </div>
         </article>
-        
-        <section class="comentarios">
-            <h2>Comentários</h2>
-            <?php if ($resultado_comentarios->num_rows > 0): ?>
-                <?php while ($comentario = $resultado_comentarios->fetch_assoc()): ?>
-                    <div class="comentario">
-                        <p><strong><?php echo htmlspecialchars($comentario['usuario']); ?>:</strong> <?php echo htmlspecialchars($comentario['comentario']); ?></p>
-                        <small><?php echo $comentario['data']; ?></small>
-                    </div>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <p>Sem comentários ainda. Seja o primeiro a comentar!</p>
-            <?php endif; ?>
+        <a href="noticias.php">Voltar para as notícias</a>
+    </main>
 
-            <form action="comentarios.php" method="POST">
-                <input type="hidden" name="id_noticia" value="<?php echo $id; ?>">
-                <label for="usuario">Seu Nome:</label>
-                <input type="text" id="usuario" name="usuario" required>
-                <label for="comentario">Comentário:</label>
-                <textarea id="comentario" name="comentario" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    <?php else: ?>
-        <p>Notícia não encontrada.</p>
-    <?php endif; ?>
-</main>
+    <!-- Rodapé -->
+    <footer>
+        <div class="redes-sociais-container">
+            <h2>Siga-nos:</h2>
+            <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
+                <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
+            </a>
+            <a href="https://facebook.com/aethergames" target="_blank">
+                <img src="https://th.bing.com/th/id/R.2bad70f2d08429a28dfbebd4c237924b?rik=vgEdhJ%2f%2biiEnQQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19748.png&ehk=0ZiZ04ZZ6mSJ5oyPxBh1gy4FSYhegWTWyDpCiI73sbw%3d&risl=&pid=ImgRaw&r=0" alt="Facebook" class="rede-social-icon">
+            </a>
+            <a href="https://www.instagram.com/aethergames1?igsh=dGRhN3k4NWltNzV5" target="_blank">
+                <img src="https://th.bing.com/th/id/R.735dda68880a385ce8cc5be4f3c5fcd6?rik=qSxRw2lCZYy9Mw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG11.png&ehk=QVCbfkCKi8pJLF08bRkS%2fLeMqLTnJQf402WRaIdN6jE%3d&risl=&pid=ImgRaw&r=0" alt="Instagram" class="rede-social-icon">
+            </a>
+            <a href="https://www.youtube.com/channel/UCZD3jFO-zq_RkJHTnBVOSIg" target="_blank">
+                <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
+            </a>
+        </div>
+        <p>&copy; 2024 Aether Games</p>
+    </footer>
 
-<footer>
-    <p>&copy; 2024 Aether Games</p>
-</footer>
 </body>
 </html>
