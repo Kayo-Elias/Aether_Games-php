@@ -52,7 +52,29 @@ $resultado_comentarios = $conexao->query($sql_comentarios);
     </div>
 </header>
 
-<main>
+<main> 
+<div class="header-right">
+            <!-- Verifica se o usuário está logado -->
+            <?php if (isset($_SESSION['nome'])): ?>
+                <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
+                <a href="logout.php">Sair</a>  <!-- Link para sair -->
+            <?php else: ?>
+                <a href="login.php">
+            <?php endif; ?>
+
+            <!-- Barra de Pesquisa -->
+            <form action="pesquisar.php" method="GET" class="pesquisa-form">
+                <input type="text" name="query" placeholder="Pesquisar..." required>
+                <button type="submit">🔍</button>
+            </form>
+
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+            </div>
+        </div>
+    </header>
     <?php if ($noticia): ?>
         <article>
             <h1><?php echo htmlspecialchars($noticia['titulo']); ?></h1>
