@@ -124,7 +124,6 @@ h1, h2 {
   gap: 10px;
   justify-content: space-between;
   padding: 20px;
-  
 }
 
 article {
@@ -137,6 +136,7 @@ article {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
 article h2 {
@@ -155,7 +155,6 @@ article small {
 }
 
 /* Estilizando as imagens das notícias */
-
 .noticia-img {
   display: block;
   width: 100%; 
@@ -163,6 +162,11 @@ article small {
   margin: 10px 0;
   border-radius: 8px;
   object-fit: cover; 
+  transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+}
+
+article:hover .noticia-img {
+  transform: scale(1.05); /* Aumenta a imagem em 5% quando o artigo é hover */
 }
 
 .noticia-completa {
@@ -225,9 +229,7 @@ footer {
   transform: scale(1.2);
 }
 
-
 /* Comentários */
-
 .comentarios {
   margin-top: 20px;
 }
@@ -321,4 +323,3 @@ form button:hover {
     font-size: 0.8em;
   }
 }
-
