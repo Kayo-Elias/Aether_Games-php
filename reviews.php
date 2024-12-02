@@ -26,7 +26,7 @@ $resultado = $conexao->query($sql);
         <div class="header-left">
             <div class="logo-container">
                 <img src="img/Aether.png" alt="Logo do site" class="logo">
-                <h1>Aether Games</h1>
+                <h1><a href="index.php">Aether Games</a></h1>
             </div>
         </div>
 
@@ -43,7 +43,7 @@ $resultado = $conexao->query($sql);
 
         <div class="header-right">
        
-
+          
             <!-- Verifica se o usuário está logado -->
             <?php if (isset($_SESSION['nome'])): ?>
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
