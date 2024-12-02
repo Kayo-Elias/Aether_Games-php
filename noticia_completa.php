@@ -52,9 +52,8 @@ if (isset($_GET['id'])) {
                 <li><a href="esports.php">eSports</a></li>
             </ul>
         </nav>
-    </header>
-    
-    <div class="header-right">
+
+        <div class="header-right">
             <!-- Verifica se o usuário está logado -->
             <?php if (isset($_SESSION['nome'])): ?>
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
@@ -75,6 +74,9 @@ if (isset($_GET['id'])) {
                 <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
             </div>
         </div>
+    </header>
+    
+   
     <!-- Conteúdo Principal -->
     <main>
         <article>
