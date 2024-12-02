@@ -124,6 +124,7 @@ h1, h2 {
   gap: 10px;
   justify-content: space-between;
   padding: 20px;
+  transition: transform 0.3s ease;
 }
 
 article {
