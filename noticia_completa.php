@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
 $sql_comentarios = "SELECT usuario, comentario, DATE_FORMAT(data, '%d/%m/%Y %H:%i') AS data FROM comentarios WHERE id_noticia = $id ORDER BY data DESC";
 $resultado_comentarios = $conexao->query($sql_comentarios);
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -95,7 +95,7 @@ $resultado_comentarios = $conexao->query($sql_comentarios);
                 <p><?php echo nl2br(htmlspecialchars($noticia['conteudo'])); ?></p>
             </div>
         </article>
-        <a href="noticias.php">Voltar para as notícias</a>
+        
     </main>
 
     <section class="comentarios">
