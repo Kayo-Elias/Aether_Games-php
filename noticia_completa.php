@@ -13,6 +13,7 @@ if (isset($_GET['id'])) {
     $stmt->execute();
     $resultado = $stmt->get_result();
 
+    
     // Verifica se a notícia foi encontrada
     if ($resultado->num_rows > 0) {
         $noticia = $resultado->fetch_assoc();
@@ -24,6 +25,11 @@ if (isset($_GET['id'])) {
     echo "ID da notícia não fornecido.";
     exit;
 }
+
+// Consulta para buscar os comentários da notícia
+$sql_comentarios = "SELECT usuario, comentario, DATE_FORMAT(data, '%d/%m/%Y %H:%i') AS data FROM comentarios WHERE id_noticia = $id ORDER BY data DESC";
+$resultado_comentarios = $conexao->query($sql_comentarios);
+?>
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +98,28 @@ if (isset($_GET['id'])) {
         <a href="noticias.php">Voltar para as notícias</a>
     </main>
 
+    <section class="comentarios">
+            <h2>Comentários</h2>
+            <?php if ($resultado_comentarios->num_rows > 0): ?>
+                <?php while ($comentario = $resultado_comentarios->fetch_assoc()): ?>
+                    <div class="comentario">
+                        <p><strong><?php echo htmlspecialchars($comentario['usuario']); ?>:</strong> <?php echo htmlspecialchars($comentario['comentario']); ?></p>
+                        <small><?php echo $comentario['data']; ?></small>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>Sem comentários ainda. Seja o primeiro a comentar!</p>
+            <?php endif; ?>
+
+            <form action="comentarios.php" method="POST">
+                <input type="hidden" name="id_noticia" value="<?php echo $id; ?>">
+                <label for="usuario">Seu Nome:</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <label for="comentario">Comentário:</label>
+                <textarea id="comentario" name="comentario" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     <!-- Rodapé -->
     <footer>
         <div class="redes-sociais-container">
@@ -111,6 +139,7 @@ if (isset($_GET['id'])) {
         </div>
         <p>&copy; 2024 Aether Games</p>
     </footer>
+
 
 </body>
 </html>
