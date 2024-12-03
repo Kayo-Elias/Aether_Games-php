@@ -119,10 +119,9 @@ h1, h2 {
 }
 
 .noticias-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
+  display: grid; /* Alterado para grid */
+  grid-template-columns: repeat(3, 1fr); /* Três colunas */
+  gap: 20px;
   padding: 20px;
 }
 
@@ -131,7 +130,6 @@ article {
   color: #F2CB15;
   padding: 15px;
   border-radius: 8px;
-  width: 48%; /* Ajustado para as notícias ficarem lado a lado */
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
   margin-bottom: 20px;
   display: flex;
