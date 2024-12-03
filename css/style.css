@@ -116,12 +116,11 @@ main {
 
 h1, h2 {
   color: #f5f5f5;
-  font-size: 1.8em;
 }
 
 .noticias-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: grid; /* Alterado para grid */
+  grid-template-columns: repeat(3, 1fr); /* Três colunas */
   gap: 20px;
   padding: 20px;
 }
@@ -136,18 +135,16 @@ article {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
-  height: 350px; /* Ajustando a altura das notícias */
 }
 
 article h2 {
-  font-size: 1.3em; /* Menor tamanho de fonte */
+  font-size: 1.5em;
   margin-bottom: 10px;
 }
 
 article p {
   font-size: 1em;
   margin-bottom: 10px;
-  flex-grow: 1; /* Faz o parágrafo ocupar o máximo de espaço disponível */
 }
 
 article small {

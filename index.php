@@ -78,7 +78,7 @@ if (!isset($conexao)) {
         if ($resultado->num_rows > 0):
             while ($noticia = $resultado->fetch_assoc()):
         ?>
-            <article class="noticia-item">
+            <article>
                 <!-- Link ajustado para diferenciar tipos de notícias -->
                 <a href="noticia_completa.php?tipo=noticias&id=<?php echo $noticia['id']; ?>">
                     <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
@@ -119,3 +119,4 @@ if (!isset($conexao)) {
 
 </body>
 </html>
+
