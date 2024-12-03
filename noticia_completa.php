@@ -2,18 +2,21 @@
 include_once 'db.php'; 
 session_start();
 
-// Verifica se o ID da notícia foi passado pela URL
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+// Verifica se o tipo de notícia e ID foram passados
+if (isset($_GET['tipo'], $_GET['id'])) {
+    $tipo = $_GET['tipo']; // 'noticias' ou 'esports'
+    $id = intval($_GET['id']);
 
-    // Consulta a notícia completa com base no ID
-    $sql = "SELECT * FROM noticias WHERE id = ?";
+    // Determina a tabela com base no tipo
+    $tabela = ($tipo === 'esports') ? 'esports' : 'noticias';
+
+    // Consulta a notícia completa com base no tipo e ID
+    $sql = "SELECT * FROM $tabela WHERE id = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    
     // Verifica se a notícia foi encontrada
     if ($resultado->num_rows > 0) {
         $noticia = $resultado->fetch_assoc();
@@ -22,7 +25,7 @@ if (isset($_GET['id'])) {
         exit;
     }
 } else {
-    echo "ID da notícia não fornecido.";
+    echo "ID ou tipo de notícia não fornecido.";
     exit;
 }
 
