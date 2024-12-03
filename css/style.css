@@ -128,7 +128,7 @@ h1, h2 {
 article {
   background: black;
   color: #F2CB15;
-  padding: 15px;
+  padding: 10px;  /* Diminuído o padding das notícias para ficar menor */
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
   margin-bottom: 20px;
@@ -138,17 +138,17 @@ article {
 }
 
 article h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  font-size: 1.3em; /* Diminuído o tamanho do título */
+  margin-bottom: 8px;
 }
 
 article p {
-  font-size: 1em;
+  font-size: 0.95em;  /* Diminuído o tamanho da descrição */
   margin-bottom: 10px;
 }
 
 article small {
-  font-size: 0.9em;
+  font-size: 0.85em;  /* Tamanho do texto da data reduzido */
   color: #888;
 }
 
@@ -321,3 +321,4 @@ form button:hover {
     font-size: 0.8em;
   }
 }
+
