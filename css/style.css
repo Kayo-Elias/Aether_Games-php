@@ -116,11 +116,12 @@ main {
 
 h1, h2 {
   color: #f5f5f5;
+  font-size: 1.8em;
 }
 
 .noticias-container {
-  display: grid; /* Alterado para grid */
-  grid-template-columns: repeat(3, 1fr); /* Três colunas */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -128,28 +129,29 @@ h1, h2 {
 article {
   background: black;
   color: #F2CB15;
-  padding: 10px;  /* Diminuído o padding das notícias para ficar menor */
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
-  max-height: 300px;  /* Limitando a altura das notícias */
+  height: 350px; /* Ajustando a altura das notícias */
 }
 
 article h2 {
-  font-size: 1.2em; /* Diminuído o tamanho do título */
-  margin-bottom: 8px;
-}
-
-article p {
-  font-size: 0.9em;  /* Diminuído o tamanho da descrição */
+  font-size: 1.3em; /* Menor tamanho de fonte */
   margin-bottom: 10px;
 }
 
+article p {
+  font-size: 1em;
+  margin-bottom: 10px;
+  flex-grow: 1; /* Faz o parágrafo ocupar o máximo de espaço disponível */
+}
+
 article small {
-  font-size: 0.85em;  /* Tamanho do texto da data reduzido */
+  font-size: 0.9em;
   color: #888;
 }
 
@@ -322,5 +324,7 @@ form button:hover {
     font-size: 0.8em;
   }
 }
+
+
 
 

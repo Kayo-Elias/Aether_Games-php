@@ -13,7 +13,7 @@ if (!isset($conexao)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aether Games</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Certifique-se de que o caminho para o CSS está correto -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -43,8 +43,7 @@ if (!isset($conexao)) {
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
                 <a href="logout.php">Sair</a>  <!-- Link para sair -->
             <?php else: ?>
-                <a href="login.php">Login</a>  <!-- Link para login -->
-                <a href="cadastro.php">Cadastrar-se</a>  <!-- Link para cadastro -->
+                <a href="login.php">
             <?php endif; ?>
 
             <!-- Barra de Pesquisa -->
@@ -52,13 +51,19 @@ if (!isset($conexao)) {
                 <input type="text" name="query" placeholder="Pesquisar..." required>
                 <button type="submit">🔍</button>
             </form>
+
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+            </div>
         </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main>
         <h1>Últimas Notícias</h1>
-        <a href="noticias.php" class="ver-mais">Ver todas as notícias</a>
+        <a href="noticias.php">Ver todas as notícias</a>
 
         <div class="noticias-container">
         <?php
@@ -73,7 +78,7 @@ if (!isset($conexao)) {
         if ($resultado->num_rows > 0):
             while ($noticia = $resultado->fetch_assoc()):
         ?>
-            <article class="noticia-resumo">
+            <article class="noticia-item">
                 <!-- Link ajustado para diferenciar tipos de notícias -->
                 <a href="noticia_completa.php?tipo=noticias&id=<?php echo $noticia['id']; ?>">
                     <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
@@ -82,7 +87,6 @@ if (!isset($conexao)) {
                     <?php endif; ?>
                 </a>
                 <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
-                <small><?php echo htmlspecialchars($noticia['data']); ?></small>
             </article>
         <?php
             endwhile;
