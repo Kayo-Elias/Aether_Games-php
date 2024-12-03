@@ -136,6 +136,7 @@ article {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
 article h2 {
@@ -154,7 +155,6 @@ article small {
 }
 
 /* Estilizando as imagens das notícias */
-
 .noticia-img {
   display: block;
   width: 100%; 
@@ -162,6 +162,11 @@ article small {
   margin: 10px 0;
   border-radius: 8px;
   object-fit: cover; 
+  transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+}
+
+article:hover .noticia-img {
+  transform: scale(1.05); /* Aumenta a imagem em 5% quando o artigo é hover */
 }
 
 .noticia-completa {
@@ -224,8 +229,55 @@ footer {
   transform: scale(1.2);
 }
 
-footer p {
+/* Comentários */
+.comentarios {
   margin-top: 20px;
+}
+
+.comentario {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.comentario strong {
+  font-weight: bold;
+}
+
+.comentario small {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #F2CB15;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #F2CB15;
 }
 
 /* Responsividade */
@@ -271,4 +323,3 @@ footer p {
     font-size: 0.8em;
   }
 }
-
