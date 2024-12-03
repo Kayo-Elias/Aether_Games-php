@@ -19,7 +19,6 @@ $resultado = $conexao->query($sql);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <!-- Cabeçalho -->
     <header>
         <div class="header-left">
@@ -28,7 +27,6 @@ $resultado = $conexao->query($sql);
                 <h1><a href="index.php">Aether Games</a></h1>
             </div>
         </div>
-
         <div class="header-center">
             <nav class="main-nav">
                 <ul>
@@ -38,28 +36,6 @@ $resultado = $conexao->query($sql);
                     <li><a href="esports.php" class="ativo">eSports</a></li>
                 </ul>
             </nav>
-        </div>
-
-        <div class="header-right">
-            <!-- Verifica se o usuário está logado -->
-            <?php if (isset($_SESSION['nome'])): ?>
-                <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
-                <a href="logout.php">Sair</a>  <!-- Link para sair -->
-            <?php else: ?>
-                <a href="login.php">
-            <?php endif; ?>
-
-            <!-- Barra de Pesquisa -->
-            <form action="pesquisar.php" method="GET" class="pesquisa-form">
-                <input type="text" name="query" placeholder="Pesquisar..." required>
-                <button type="submit">🔍</button>
-            </form>
-
-            <!-- Botões de Login e Cadastrar-se -->
-            <div class="auth-buttons">
-                <a href="login.php"><button class="login-button">Login</button></a>
-                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
-            </div>
         </div>
     </header>
 
@@ -72,8 +48,8 @@ $resultado = $conexao->query($sql);
                 while ($noticia = $resultado->fetch_assoc()):
             ?>
                 <article>
-                    <!-- Título e imagem agora são links para a página de notícia completa -->
-                    <a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>" class="noticia-link">
+                    <!-- Link correto para acessar notícias de eSports -->
+                    <a href="noticia_completa.php?tipo=esports&id=<?php echo $noticia['id']; ?>" class="noticia-link">
                         <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
                         <?php if (!empty($noticia['imagem'])): ?>
                             <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
@@ -89,7 +65,6 @@ $resultado = $conexao->query($sql);
             <?php endif; ?>
         </div>
     </main>
-
     <!-- Rodapé -->
     <footer>
         <div class="redes-sociais-container">
@@ -109,6 +84,9 @@ $resultado = $conexao->query($sql);
         </div>
         <p>&copy; 2024 Aether Games</p>
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
