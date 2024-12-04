@@ -13,3 +13,7 @@ $conexao = new mysqli($host, $usuario, $senha, $banco);
 if ($conexao->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
 }
+<<<<<<< HEAD
+=======
+?>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c

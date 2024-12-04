@@ -26,7 +26,11 @@ $resultado = $conexao->query($sql);
         <div class="header-left">
             <div class="logo-container">
                 <img src="img/Aether.png" alt="Logo do site" class="logo">
+<<<<<<< HEAD
                 <h1>Aether Games</h1>
+=======
+                <h1><a href="index.php">Aether Games</a></h1>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
             </div>
         </div>
 
@@ -42,6 +46,11 @@ $resultado = $conexao->query($sql);
         </div>
 
         <div class="header-right">
+<<<<<<< HEAD
+=======
+       
+          
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
             <!-- Verifica se o usuário está logado -->
             <?php if (isset($_SESSION['nome'])): ?>
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
@@ -49,6 +58,7 @@ $resultado = $conexao->query($sql);
             <?php else: ?>
                 <a href="login.php">
             <?php endif; ?>
+<<<<<<< HEAD
         </div>
         <!-- Barra de Pesquisa -->
         <form action="pesquisa.php" method="GET" class="pesquisa-form">
@@ -57,6 +67,22 @@ $resultado = $conexao->query($sql);
         </form>
     </header>
 
+=======
+
+            <!-- Barra de Pesquisa -->
+            <form action="pesquisar.php" method="GET" class="pesquisa-form">
+                <input type="text" name="query" placeholder="Pesquisar..." required>
+                <button type="submit">🔍</button>
+            </form>
+
+            <!-- Botões de Login e Cadastrar-se -->
+            <div class="auth-buttons">
+                <a href="login.php"><button class="login-button">Login</button></a>
+                <a href="cadastro.php"><button class="register-button">Cadastrar-se</button></a>
+            </div>
+        </div>
+    </header>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
     <!-- Conteúdo Principal -->
     <main>
         <h1>Últimas Reviews</h1>
@@ -67,7 +93,11 @@ $resultado = $conexao->query($sql);
             ?>
                 <article>
                     <!-- Título e imagem agora são links para a página de review completa -->
+<<<<<<< HEAD
                     <a href="noticia_completa.php?id=<?php echo $review['id']; ?>" class="noticia-link">
+=======
+                    <a href="noticia_completa.php?id=<?php echo $review['id']; ?>&tipo=reviews" class="noticia-link">
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
                         <h2><?php echo htmlspecialchars($review['titulo']); ?></h2>
                         <?php if (!empty($review['imagem'])): ?>
                             <img src="<?php echo htmlspecialchars($review['imagem']); ?>" alt="Imagem da review" class="noticia-img">
@@ -84,8 +114,28 @@ $resultado = $conexao->query($sql);
         </div>
     </main>
 
+<<<<<<< HEAD
     <!-- Rodapé -->
     <footer>
+=======
+   <!-- Rodapé -->
+   <footer>
+        <div class="redes-sociais-container">
+            <h2>Siga-nos:</h2>
+            <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
+                <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
+            </a>
+            <a href="https://facebook.com/aethergames" target="_blank">
+                <img src="https://th.bing.com/th/id/R.2bad70f2d08429a28dfbebd4c237924b?rik=vgEdhJ%2f%2biiEnQQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19748.png&ehk=0ZiZ04ZZ6mSJ5oyPxBh1gy4FSYhegWTWyDpCiI73sbw%3d&risl=&pid=ImgRaw&r=0" alt="Facebook" class="rede-social-icon">
+            </a>
+            <a href="https://www.instagram.com/aethergames1?igsh=dGRhN3k4NWltNzV5" target="_blank">
+                <img src="https://th.bing.com/th/id/R.735dda68880a385ce8cc5be4f3c5fcd6?rik=qSxRw2lCZYy9Mw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG11.png&ehk=QVCbfkCKi8pJLF08bRkS%2fLeMqLTnJQf402WRaIdN6jE%3d&risl=&pid=ImgRaw&r=0" alt="Instagram" class="rede-social-icon">
+            </a>
+            <a href="https://www.youtube.com/channel/UCZD3jFO-zq_RkJHTnBVOSIg" target="_blank">
+                <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
+            </a>
+        </div>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         <p>&copy; 2024 Aether Games</p>
     </footer>
 

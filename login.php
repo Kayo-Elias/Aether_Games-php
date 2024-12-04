@@ -40,6 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 0;
             box-sizing: border-box;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         body {
             font-family: Arial, sans-serif;
             background-color: #212121;
@@ -49,6 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             align-items: center;
             height: 100vh;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         .container {
             background: white;
             padding: 30px 40px;
@@ -68,12 +76,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 -1px 1px 0 #000,  
                 1px 1px 0 #000;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         label {
             font-size: 14px;
             font-weight: bold;
             display: block;
             margin-bottom: 8px;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         input {
             width: 100%;
             padding: 10px;
@@ -98,6 +114,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button:hover {
             background-color: #adad53;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         .link {
             display: block;
             text-align: center;
@@ -106,6 +126,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: black;
             text-decoration: none;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         .link:hover {
             text-decoration: underline;
         }

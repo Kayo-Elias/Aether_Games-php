@@ -43,7 +43,11 @@ if (!isset($conexao)) {
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
                 <a href="logout.php">Sair</a>  <!-- Link para sair -->
             <?php else: ?>
+<<<<<<< HEAD
                 <a href="login.php">
+=======
+                <a href="login.php">Login</a>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
             <?php endif; ?>
 
             <!-- Barra de Pesquisa -->
@@ -67,11 +71,21 @@ if (!isset($conexao)) {
 
         <div class="noticias-container">
         <?php
+<<<<<<< HEAD
         $sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias ORDER BY data DESC LIMIT 3";
+=======
+        // Consulta para obter as 9 notícias mais recentes, unindo `noticias` e `esports`
+        $sql = "(SELECT id, titulo, conteudo, imagem, 'noticias' AS tipo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias)
+                UNION ALL
+                (SELECT id, titulo, conteudo, imagem, 'esports' AS tipo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports)
+                ORDER BY data DESC LIMIT 9";
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         $resultado = $conexao->query($sql);
 
         if ($resultado->num_rows > 0):
             while ($noticia = $resultado->fetch_assoc()):
+<<<<<<< HEAD
         ?>
             <article>
                 <h2><a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>"><?php echo htmlspecialchars($noticia['titulo']); ?></a></h2>
@@ -80,6 +94,18 @@ if (!isset($conexao)) {
                         <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
                     </a>
                 <?php endif; ?>
+=======
+                $tipo = $noticia['tipo']; // Define o tipo de notícia (noticias ou esports)
+        ?>
+            <article>
+                <!-- Link ajustado para diferenciar tipos de notícias -->
+                <a href="noticia_completa.php?tipo=<?php echo $tipo; ?>&id=<?php echo $noticia['id']; ?>">
+                    <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
+                    <?php if (!empty($noticia['imagem'])): ?>
+                        <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
+                    <?php endif; ?>
+                </a>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
                 <p><?php echo nl2br(htmlspecialchars(substr($noticia['conteudo'], 0, 150))); ?>...</p>
             </article>
         <?php

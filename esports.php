@@ -7,12 +7,19 @@ if (!isset($conexao)) {
     die("Erro: Não foi possível conectar ao banco de dados.");
 }
 
+<<<<<<< HEAD
 $sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data 
         FROM noticias 
         WHERE categoria = 'esports' 
         ORDER BY data DESC";
 $resultado = $conexao->query($sql);
 ?>
+=======
+$sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports ORDER BY data DESC";
+$resultado = $conexao->query($sql);
+?>
+
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,16 +29,25 @@ $resultado = $conexao->query($sql);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
     <!-- Cabeçalho -->
     <header>
         <div class="header-left">
             <div class="logo-container">
                 <img src="img/Aether.png" alt="Logo do site" class="logo">
+<<<<<<< HEAD
                 <h1>Aether Games</h1>
             </div>
         </div>
 
+=======
+                <h1><a href="index.php">Aether Games</a></h1>
+            </div>
+        </div>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         <div class="header-center">
             <nav class="main-nav">
                 <ul>
@@ -42,6 +58,7 @@ $resultado = $conexao->query($sql);
                 </ul>
             </nav>
         </div>
+<<<<<<< HEAD
 
         <div class="header-right">
             <!-- Verifica se o usuário está logado -->
@@ -57,6 +74,8 @@ $resultado = $conexao->query($sql);
             <input type="text" name="query" placeholder="Pesquisar...">
             <button type="submit">🔍</button>
         </form>
+=======
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
     </header>
 
     <!-- Conteúdo Principal -->
@@ -68,8 +87,13 @@ $resultado = $conexao->query($sql);
                 while ($noticia = $resultado->fetch_assoc()):
             ?>
                 <article>
+<<<<<<< HEAD
                     <!-- Título e imagem agora são links para a página de notícia completa -->
                     <a href="noticia_completa.php?id=<?php echo $noticia['id']; ?>" class="noticia-link">
+=======
+                    <!-- Link correto para acessar notícias de eSports -->
+                    <a href="noticia_completa.php?tipo=esports&id=<?php echo $noticia['id']; ?>" class="noticia-link">
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
                         <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
                         <?php if (!empty($noticia['imagem'])): ?>
                             <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
@@ -85,11 +109,37 @@ $resultado = $conexao->query($sql);
             <?php endif; ?>
         </div>
     </main>
+<<<<<<< HEAD
 
     <!-- Rodapé -->
     <footer>
+=======
+    <!-- Rodapé -->
+    <footer>
+        <div class="redes-sociais-container">
+            <h2>Siga-nos:</h2>
+            <a href="https://x.com/aethergames_?t=OkI8IvGnlaga-8LS0QC99Q&s=09" target="_blank">
+                <img src="https://www.freepnglogos.com/uploads/twitter-x-logo-png/twitter-x-logo-png-9.png" alt="Twitter" class="rede-social-icon">
+            </a>
+            <a href="https://facebook.com/aethergames" target="_blank">
+                <img src="https://th.bing.com/th/id/R.2bad70f2d08429a28dfbebd4c237924b?rik=vgEdhJ%2f%2biiEnQQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19748.png&ehk=0ZiZ04ZZ6mSJ5oyPxBh1gy4FSYhegWTWyDpCiI73sbw%3d&risl=&pid=ImgRaw&r=0" alt="Facebook" class="rede-social-icon">
+            </a>
+            <a href="https://www.instagram.com/aethergames1?igsh=dGRhN3k4NWltNzV5" target="_blank">
+                <img src="https://th.bing.com/th/id/R.735dda68880a385ce8cc5be4f3c5fcd6?rik=qSxRw2lCZYy9Mw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG11.png&ehk=QVCbfkCKi8pJLF08bRkS%2fLeMqLTnJQf402WRaIdN6jE%3d&risl=&pid=ImgRaw&r=0" alt="Instagram" class="rede-social-icon">
+            </a>
+            <a href="https://www.youtube.com/channel/UCZD3jFO-zq_RkJHTnBVOSIg" target="_blank">
+                <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="YouTube" class="rede-social-icon">
+            </a>
+        </div>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
         <p>&copy; 2024 Aether Games</p>
     </footer>
 
 </body>
 </html>
+<<<<<<< HEAD
+=======
+
+</body>
+</html>
+>>>>>>> 896216a78744a7297490abc947778a8eb228fe9c
