@@ -67,7 +67,7 @@ $resultado = $conexao->query($sql);
             ?>
                 <article>
                     <!-- Título e imagem agora são links para a página de review completa -->
-                    <a href="noticia_completa.php?id=<?php echo $review['id']; ?>&tipo=reviews" class="noticia-link">
+                    <a href="noticia_completa.php?id=<?php echo $review['id']; ?>" class="noticia-link">
                         <h2><?php echo htmlspecialchars($review['titulo']); ?></h2>
                         <?php if (!empty($review['imagem'])): ?>
                             <img src="<?php echo htmlspecialchars($review['imagem']); ?>" alt="Imagem da review" class="noticia-img">

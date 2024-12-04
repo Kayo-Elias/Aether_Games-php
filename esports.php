@@ -7,7 +7,10 @@ if (!isset($conexao)) {
     die("Erro: Não foi possível conectar ao banco de dados.");
 }
 
-$sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports ORDER BY data DESC";
+$sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data 
+        FROM noticias 
+        WHERE categoria = 'esports' 
+        ORDER BY data DESC";
 $resultado = $conexao->query($sql);
 ?>
 <!DOCTYPE html>
