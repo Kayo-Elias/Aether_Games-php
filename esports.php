@@ -10,6 +10,7 @@ if (!isset($conexao)) {
 $sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports ORDER BY data DESC";
 $resultado = $conexao->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
