@@ -3,38 +3,42 @@ include_once 'db.php';
 session_start();
 
 // Verifica se o tipo de notícia e ID foram passados
-if (isset($_GET['tipo'], $_GET['id'])) {
-    $tipo = $_GET['tipo']; // 'noticias' ou 'esports'
-    $id = intval($_GET['id']);
+if (isset($_GET['id']) && isset($_GET['tipo'])) {
+    $id = $_GET['id'];
+    $tipo = $_GET['tipo'];
 
-    // Determina a tabela com base no tipo
-    $tabela = ($tipo === 'esports') ? 'esports' : 'noticias';
+    
+    if ($tipo == 'reviews') {
+        
+        $sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM reviews WHERE id = ? LIMIT 1";
+    } elseif ($tipo == 'esports') {
+        
+        $sql = "SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports WHERE id = ? LIMIT 1";
+    } else {
+        echo "<p>Tipo de notícia inválido.</p>";
+        exit;
+    }
 
-    // Consulta a notícia completa com base no tipo e ID
-    $sql = "SELECT * FROM $tabela WHERE id = ?";
+    
     $stmt = $conexao->prepare($sql);
-    $stmt->bind_param('i', $id);
+    $stmt->bind_param('i', $id); 
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    // Verifica se a notícia foi encontrada
+
     if ($resultado->num_rows > 0) {
         $noticia = $resultado->fetch_assoc();
     } else {
-        echo "Notícia não encontrada.";
+        echo "<p>Notícia não encontrada.</p>";
         exit;
     }
 } else {
-    echo "ID ou tipo de notícia não fornecido.";
+    echo "<p>ID ou tipo de notícia inválido.</p>";
     exit;
 }
 ?>
 
 
-// Consulta para buscar os comentários da notícia
-$sql_comentarios = "SELECT usuario, comentario, DATE_FORMAT(data, '%d/%m/%Y %H:%i') AS data FROM comentarios WHERE id_noticia = $id ORDER BY data DESC";
-$resultado_comentarios = $conexao->query($sql_comentarios);
-?>
 
 
 <!DOCTYPE html>
