@@ -28,6 +28,8 @@ if (isset($_GET['tipo'], $_GET['id'])) {
     echo "ID ou tipo de notícia não fornecido.";
     exit;
 }
+?>
+
 
 // Consulta para buscar os comentários da notícia
 $sql_comentarios = "SELECT usuario, comentario, DATE_FORMAT(data, '%d/%m/%Y %H:%i') AS data FROM comentarios WHERE id_noticia = $id ORDER BY data DESC";
