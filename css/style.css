@@ -156,15 +156,16 @@ article small {
 .noticia-img {
   display: block;
   width: 100%; 
-  height: auto; 
+  height: 200px; 
+  object-fit: cover; 
   margin: 10px 0;
   border-radius: 8px;
-  object-fit: cover; 
-  transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+  
 }
 
+
 article:hover .noticia-img {
-  transform: scale(1.05); /* Aumenta a imagem em 5% quando o artigo é hover */
+  transform: none; 
 }
 
 .noticia-completa {
@@ -174,6 +175,7 @@ article:hover .noticia-img {
   background-color: #000;
   border-radius: 10px;
 }
+
 
 
 .noticias-lista article {
