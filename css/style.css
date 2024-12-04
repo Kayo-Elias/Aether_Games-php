@@ -175,13 +175,31 @@ article:hover .noticia-img {
   border-radius: 10px;
 }
 
-.noticias-lista {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 20px; 
-  justify-content: space-between; 
-  padding: 20px;
-} 
+
+.noticias-lista article {
+  width: 100%; 
+  max-width: 700px; 
+  margin: 0 auto 20px auto; 
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.noticia-link h2 {
+  font-size: 1.5em; 
+  margin-bottom: 10px;
+}
+
+.noticia-link img {
+  width: 100%; 
+  height: auto; 
+  max-height: 400px; 
+}
+
+.noticias-lista p {
+  font-size: 1em; 
+  line-height: 1.6;
+}
+
 
 .ver-mais {
   text-decoration: none;
