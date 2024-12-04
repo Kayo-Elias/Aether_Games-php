@@ -43,7 +43,7 @@ if (!isset($conexao)) {
                 <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
                 <a href="logout.php">Sair</a>  <!-- Link para sair -->
             <?php else: ?>
-                <a href="login.php">
+                <a href="login.php">Login</a>
             <?php endif; ?>
 
             <!-- Barra de Pesquisa -->
@@ -68,19 +68,20 @@ if (!isset($conexao)) {
         <div class="noticias-container">
         <?php
         // Consulta para obter as 9 notícias mais recentes, unindo `noticias` e `esports`
-        $sql = "(SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias)
+        $sql = "(SELECT id, titulo, conteudo, imagem, 'noticias' AS tipo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM noticias)
                 UNION ALL
-                (SELECT id, titulo, conteudo, imagem, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports)
+                (SELECT id, titulo, conteudo, imagem, 'esports' AS tipo, DATE_FORMAT(data, '%d/%m/%Y') AS data FROM esports)
                 ORDER BY data DESC LIMIT 9";
 
         $resultado = $conexao->query($sql);
 
         if ($resultado->num_rows > 0):
             while ($noticia = $resultado->fetch_assoc()):
+                $tipo = $noticia['tipo']; // Define o tipo de notícia (noticias ou esports)
         ?>
             <article>
                 <!-- Link ajustado para diferenciar tipos de notícias -->
-                <a href="noticia_completa.php?tipo=noticias&id=<?php echo $noticia['id']; ?>">
+                <a href="noticia_completa.php?tipo=<?php echo $tipo; ?>&id=<?php echo $noticia['id']; ?>">
                     <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
                     <?php if (!empty($noticia['imagem'])): ?>
                         <img src="<?php echo htmlspecialchars($noticia['imagem']); ?>" alt="Imagem da notícia" class="noticia-img">
@@ -119,4 +120,3 @@ if (!isset($conexao)) {
 
 </body>
 </html>
-
